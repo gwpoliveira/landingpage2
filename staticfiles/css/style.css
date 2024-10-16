@@ -1,77 +1,235 @@
+/* Ajuste geral do layout */
 body {
     font-family: Arial, sans-serif;
 }
 
+/* Estilização da Hero Section */
 .hero-section {
-    background-color: #0340ea;
-    color: #ffffff;
-    padding: 50px 0;
-    text-align: center;
+    background-color: #0340ea; /* Fundo azul primário */
+    color: #ffffff; /* Texto branco */
+    padding: 60px 20px; /* Padding maior para destaque */
+    text-align: center; /* Centralizar o conteúdo */
+    border-bottom: 5px solid #0229b7; /* Linha inferior azul escuro */
+    margin-bottom: 30px; /* Espaçamento abaixo da Hero Section */
 }
 
+.hero-section h1 {
+    font-size: 2.5rem; /* Tamanho maior do título */
+    font-weight: bold;
+    margin-bottom: 20px; /* Espaçamento entre o título e o parágrafo */
+}
+
+.hero-section p {
+    font-size: 1.2rem; /* Tamanho da fonte do parágrafo */
+    line-height: 1.5; /* Aumentar o espaçamento entre linhas */
+    margin-bottom: 30px; /* Espaçamento entre o parágrafo e o botão */
+}
+
+/* Estilização do botão */
+.hero-section .btn {
+    background-color: #65b156; /* Fundo verde para destacar o botão */
+    color: #ffffff; /* Texto branco */
+    padding: 12px 30px; /* Tamanho confortável do botão */
+    font-size: 1.1rem; /* Tamanho da fonte */
+    border-radius: 50px; /* Bordas arredondadas */
+    border: none;
+    transition: background-color 0.3s, color 0.3s; /* Transição suave ao passar o mouse */
+}
+
+/* Alteração ao passar o mouse no botão */
+.hero-section .btn:hover {
+    background-color: #0229b7; /* Fundo azul escuro ao passar o mouse */
+    color: #ffffff; /* Texto branco */
+}
+
+
+
+/* Ajustar a seção de cursos */
 .courses-section {
     background-color: #f7f7f7;
-    padding: 50px 0;
+    padding: 25px 0; /* Reduzido de 30px */
+    margin-bottom: 15px; /* Reduzido o espaço entre seções */
 }
 
+/* Ajustar o título da seção */
 .courses-section h2 {
     color: #0229b7;
-    margin-bottom: 20px;
-    font-size: 2rem;
+    margin-bottom: 8px; /* Menor margem inferior */
+    font-size: 1.6 rem; /* Fonte um pouco menor */
+    font-weight: bold;
+
 }
 
+/* Reduzir margens dos botões de filtro */
 .filter-btn {
-    margin-right: 10px;
-    margin-bottom: 10px;
+    margin-right: 3px; /* Menor espaçamento entre os botões */
+    margin-bottom: 8px; /* Menor espaçamento abaixo dos botões */
+    padding: 8px 12px; /* Reduzir padding dos botões */
+    font-size: 0.9rem; /* Reduzir tamanho da fonte dos botões */
 }
 
+/* Ajustar o layout dos cards para ser mais compacto */
 .custom-card {
     border: none;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 8px; /* Bordas ligeiramente mais pequenas */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Leve sombra */
+    margin-bottom: 12px; /* Menor espaçamento entre os cards */
 }
 
-.custom-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
+/* Reduzir o espaçamento dentro dos cards */
 .custom-card .card-body {
-    background-color: #ffffff;
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
+    padding: 12px; /* Menor padding interno dos cards */
 }
 
-.custom-card .card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #0340ea;
-    margin: 0;
-    padding: 10px 0;
-}
-
+/* Imagem dentro do card */
 .custom-card img {
     width: 50px;
-    margin-bottom: 15px;
+    margin-bottom: 8px; /* Margem menor abaixo das imagens */
 }
 
+/* Título dos cards */
+.custom-card .card-title {
+    font-size: 1rem; /* Um pouco menor */
+    font-weight: bold;
+    color: #0340ea;
+}
+
+/* Campo de busca */
 .search-box {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 30px;
+    padding: 6px; /* Menor padding */
+    margin-bottom: 15px; /* Menor margem inferior */
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
+/* Estilização do formulário */
+.lead-form-section {
+    background-color: #f7f7f7;
+    padding: 30px 0; /* Reduzido o padding do topo e base */
+}
+
+.lead-form {
+    max-width: 550px; /* Ligeiramente menor largura do formulário */
+    margin: 0 auto;
+    padding: 15px; /* Menor padding interno do formulário */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lead-form .form-group {
+    margin-bottom: 12px; /* Menor espaçamento entre os campos */
+}
+
+.lead-form .input-group {
+    border-radius: 10px;
+}
+
+.lead-form .input-group-text {
+    background-color: #0340ea;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px 0 0 10px;
+}
+
+.lead-form .form-control {
+    border-radius: 0 10px 10px 0;
+    border: 1px solid #ccc;
+    padding: 8px; /* Menor padding nos campos */
+}
+
+.lead-form select.form-control {
+    border-radius: 10px;
+}
+
+.lead-form button {
+    background-color: #0340ea;
+    color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    padding: 10px; /* Menor padding do botão */
+    transition: background-color 0.3s;
+}
+
+.lead-form button:hover {
+    background-color: #0229b7;
+}
+
+.lead-form h2 {
+    margin-bottom: 18px; /* Menor margem inferior do título */
+    color: #0340ea;
+    font-weight: bold;
+}
+
+/* Footer */
 footer {
     background-color: #0229b7;
     color: #ffffff;
-    padding: 20px 0;
+    padding: 15px 0; /* Diminuir o padding */
     text-align: center;
+    font-size: 0.85rem; /* Fonte menor */
 }
 
+/* Diminuir espaçamentos nas margens internas dos cards e na seção */
 .d-none {
     display: none;
+}
+
+/* Estilo geral do banner */
+.banner {
+    background-image: url("{% static 'img/bannerxl.png' %}"); /* Banner para desktop */
+    background-size: cover;
+    background-position: center;
+    width: 100%; /* O banner ocupa 100% da largura da tela */
+    height: 500px; /* Altura padrão para desktops */
+}
+
+/* Ajustes para tablets */
+@media (max-width: 1024px) {
+    .banner {
+        background-image: url("{% static 'img/bannerl.png' %}"); /* Banner para tablets */
+        height: 400px; /* Altura menor em tablets */
+    }
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    .banner {
+        background-image: url("{% static 'img/bannerl.png' %}"); /* Banner para celulares */
+        height: 300px; /* Banner menor para dispositivos móveis */
+    }
+}
+
+/* Conteúdo centralizado no banner */
+.banner-content {
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.banner-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+}
+
+.banner-content a {
+    background-color: #65b156;
+    color: #ffffff;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s; /* Transição suave */
+}
+
+.banner-content a:hover {
+    background-color: #0229b7;
+    color: #ffffff;
 }
