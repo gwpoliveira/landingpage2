@@ -1,3 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.hero-section {
+    background-color: #0340ea;
+    color: #ffffff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.courses-section {
+    background-color: #f7f7f7;
+    padding: 50px 0;
+}
+
+.courses-section h2 {
+    color: #0229b7;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.filter-btn {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
 .custom-card {
     border: none;
     border-radius: 15px;
@@ -25,14 +52,26 @@
     padding: 10px 0;
 }
 
-.courses-section h2 {
-    color: #0229b7;
-    margin-bottom: 40px;
-    font-size: 2rem;
-    font-weight: bold;
+.custom-card img {
+    width: 50px;
+    margin-bottom: 15px;
 }
 
-.courses-section {
-    padding: 50px 0;
-    background-color: #f7f7f7;
+.search-box {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #0229b7;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.d-none {
+    display: none;
 }

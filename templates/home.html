@@ -5,51 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estude numa faculdade católica - Faculdades Fatepi e Faespi</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .hero-section {
-            background-color: #0340ea;
-            color: #ffffff;
-            padding: 50px 0;
-            text-align: center;
-        }
-        .courses-section {
-            background-color: #ffffff;
-            padding: 50px 0;
-            text-align: center;
-        }
-        .courses-section h2 {
-            color: #0229b7;
-        }
-        .courses-section ul {
-            list-style: none;
-            padding: 0;
-        }
-        .courses-section ul li {
-            font-size: 18px;
-            margin: 5px 0;
-        }
-        .lead-form-section {
-            background-color: #65b156;
-            color: #ffffff;
-            padding: 50px 0;
-            text-align: center;
-        }
-        .lead-form-section h2 {
-            margin-bottom: 30px;
-        }
-        footer {
-            background-color: #0229b7;
-            color: #ffffff;
-            padding: 20px 0;
-            text-align: center;
-        }
-    </style>
+    <!-- Incluindo o Bootstrap via CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Incluindo o CSS customizado -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
@@ -60,135 +21,184 @@
         <a href="#lead-form" class="btn btn-light btn-lg">Inscreva-se Agora</a>
     </header>
 
-<!-- Courses Section -->
-<section class="courses-section">
-    <h2>Nossos Cursos</h2>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <div class="card-body">
-                        <h5 class="card-title">ADMINISTRAÇÃO</h5>
+    <!-- Filtros -->
+    <section class="courses-section text-center">
+        <h2>Nossos Cursos</h2>
+        <div>
+            <button class="btn btn-outline-primary filter-btn" data-filter="saude">Saúde</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="humanas">Humanas e Sociais</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="exatas">Tecnologia</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="saude">Saúde</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="gestao">Gestão e Negócio</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="all">Todos</button>
+        </div>
+
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section">
+        <div class="container">
+            <div class="row" id="course-list">
+                <div class="col-md-4 mb-4 course-item" data-category="humanas">
+                    <div class="card custom-card mb-4">
+                        <div class="card-body">
+                            <img src="{% static 'img/direito.png' %}" alt="Direito">
+                            <h5 class="card-title">Direito</h5>
+                        </div>
+                    </div>
+                    <div class="card custom-card mb-4">
+                        <div class="card-body">
+                            <img src="{% static 'img/pedagogia.png' %}" alt="Pedagogia">
+                            <h5 class="card-title">Pedagogia</h5>
+                        </div>
+                    </div>
+                    <div class="card custom-card mb-4">
+                        <div class="card-body">
+                            <img src="{% static 'img/servico.png' %}" alt="Serviço Social">
+                            <h5 class="card-title">Serviço Social</h5>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4 mb-4 course-item" data-category="exatas">
+                    <div class="card custom-card">
+                        <div class="card-body">
+                            <img src="{% static 'img/sistemas_info.png' %}" alt="Sistemas de Informação">
+                            <h5 class="card-title">Sistemas de Informação</h5>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <div class="card-body">
-                        <h5 class="card-title">CIÊNCIAS CONTÁBEIS</h5>
+                <div class="col-md-4 mb-4 course-item" data-category="saude">
+                    <div class="card custom-card mb-4">
+                        <div class="card-body ">
+                            <img src="{% static 'img/enfermagem.png' %}" alt="Enfermagem">
+                            <h5 class="card-title">Enfermagem</h5>
+                        </div>
                     </div>
+                    <div class="card custom-card mb-4">
+                        <div class="card-body ">
+                            <img src="{% static 'img/fisica.png' %}" alt="Educação Física">
+                            <h5 class="card-title">Educação Física</h5>
+                        </div>
+                    </div>
+                    <div class="card custom-card mb-4">
+                        <div class="card-body ">
+                            <img src="{% static 'img/fisioterapia.png' %}" alt="Fisioterapia">
+                            <h5 class="card-title">Fisioterapia</h5>
+                        </div>
+                    </div>
+                    <div class="card custom-card mb-4">
+                        <div class="card-body ">
+                            <img src="{% static 'img/enfermagem.png' %}" alt="Enfermagem">
+                            <h5 class="card-title">Enfermagem</h5>
+                        </div>
+                    </div>
+                    <div class="card custom-card mb-4">
+                        <div class="card-body">
+                            <img src="{% static 'img/psicologia.png' %}" alt="Psicologia">
+                            <h5 class="card-title">Psicologia</h5>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <div class="card-body">
-                        <h5 class="card-title">EDUCAÇÃO FÍSICA</h5>
+                <div class="col-md-4 mb-4 course-item" data-category="gestao">
+                    <div class="card custom-card mb-4">
+                        <div class="card-body">
+                            <img src="{% static 'img/administracao.png' %}" alt="Administração">
+                            <h5 class="card-title">Administração</h5>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <div class="card-body">
-                        <h5 class="card-title">FISIOTERAPIA</h5>
+                    <div class="card custom-card">
+                        <div class="card-body">
+                            <img src="{% static 'img/contabeis.png' %}" alt="Contabeis">
+                            <h5 class="card-title">Contabéis</h5>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <div class="card-body">
-                        <h5 class="card-title">FONOAUDIOLOGIA</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <div class="card-body">
-                        <h5 class="card-title">SERVIÇO SOCIAL</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <div class="card-body">
-                        <h5 class="card-title">ENFERMAGEM</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <div class="card-body">
-                        <h5 class="card-title">PSICOLOGIA</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <div class="card-body">
-                        <h5 class="card-title">SISTEMAS DE INFORMAÇÃO</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <div class="card-body">
-                        <h5 class="card-title">PEDAGOGIA</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <div class="card-body">
-                        <h5 class="card-title">DIREITO</h5>
-                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-
-    <!-- Lead Form Section -->
-    <section class="lead-form-section" id="lead-form">
-        <h2>Inscreva-se Agora</h2>
-        <form action="{% url 'process_lead' %}" method="post">
+    <!-- Formulário de Inscrição -->
+    <section id="lead-form" class="lead-form-section">
+    <div class="container">
+        <h2 class="text-center">Inscreva-se Agora</h2>
+        <form action="{% url 'process_lead' %}" method="post" class="lead-form">
             {% csrf_token %}
             <div class="form-group">
-                <input type="text" class="form-control" name="name" placeholder="Seu Nome" required>
+                <label for="name">Nome Completo</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Seu Nome" required>
+                </div>
             </div>
             <div class="form-group">
-                <input type="email" class="form-control" name="email" placeholder="Seu E-mail" required>
+                <label for="email">E-mail</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </div>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Seu E-mail" required>
+                </div>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" name="phone" placeholder="Seu Telefone" required>
+                <label for="phone">Telefone</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-phone"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Seu Telefone" required>
+                </div>
             </div>
             <div class="form-group">
-                <select class="form-control" name="course" required>
-                    <option value="">Escolha o Curso</option>
-                    <option value="ADMINISTRAÇÃO">ADMINISTRAÇÃO</option>
-                    <option value="CIÊNCIAS CONTÁBEIS">CIÊNCIAS CONTÁBEIS</option>
-                    <option value="EDUCAÇÃO FÍSICA">EDUCAÇÃO FÍSICA</option>
-                    <option value="FISIOTERAPIA">FISIOTERAPIA</option>
-                    <option value="FONOAUDIOLOGIA">FONOAUDIOLOGIA</option>
-                    <option value="SERVIÇO SOCIAL">SERVIÇO SOCIAL</option>
-                    <option value="ENFERMAGEM">ENFERMAGEM</option>
-                    <option value="PSICOLOGIA">PSICOLOGIA</option>
-                    <option value="SISTEMAS DE INFORMAÇÃO">SISTEMAS DE INFORMAÇÃO</option>
-                    <option value="PEDAGOGIA">PEDAGOGIA</option>
-                    <option value="DIREITO">DIREITO</option>
-                </select>
+                <label for="course">Curso de Interesse</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-book"></i>
+                        </span>
+                    </div>
+                    <select class="form-control" id="course" name="course" required>
+                        <option value="">Escolha o Curso</option>
+                        <option value="ADMINISTRAÇÃO">ADMINISTRAÇÃO</option>
+                        <option value="CIÊNCIAS CONTÁBEIS">CIÊNCIAS CONTÁBEIS</option>
+                        <option value="EDUCAÇÃO FÍSICA">EDUCAÇÃO FÍSICA</option>
+                        <option value="FISIOTERAPIA">FISIOTERAPIA</option>
+                        <option value="FONOAUDIOLOGIA">FONOAUDIOLOGIA</option>
+                        <option value="SERVIÇO SOCIAL">SERVIÇO SOCIAL</option>
+                        <option value="ENFERMAGEM">ENFERMAGEM</option>
+                        <option value="PSICOLOGIA">PSICOLOGIA</option>
+                        <option value="SISTEMAS DE INFORMAÇÃO">SISTEMAS DE INFORMAÇÃO</option>
+                        <option value="PEDAGOGIA">PEDAGOGIA</option>
+                        <option value="DIREITO">DIREITO</option>
+                    </select>
+                </div>
             </div>
-            <button type="submit" class="btn btn-light btn-lg">Enviar</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block mb-5">Enviar</button>
         </form>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
         <p>Faculdades Fatepi e Faespi | Contato: (86) 9999-9999 | Email: contato@fatepifaespi.com.br</p>
     </footer>
 
+    <!-- JavaScript do Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Incluindo o JavaScript customizado -->
+    <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 </html>
