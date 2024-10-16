@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estude numa faculdade católica - Faculdades Fatepi e Faespi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hero-section {
+            background-color: #0340ea;
+            color: #ffffff;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .courses-section {
+            background-color: #ffffff;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .courses-section h2 {
+            color: #0229b7;
+        }
+        .courses-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .courses-section ul li {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .lead-form-section {
+            background-color: #65b156;
+            color: #ffffff;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .lead-form-section h2 {
+            margin-bottom: 30px;
+        }
+        footer {
+            background-color: #0229b7;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <h1>Estude numa faculdade católica</h1>
+        <p>Temos os melhores professores da cidade. Só aqui você tem uma formação completa: acadêmica e humana, seguindo os valores cristãos.</p>
+        <a href="#lead-form" class="btn btn-light btn-lg">Inscreva-se Agora</a>
+    </header>
+
+<!-- Courses Section -->
+<section class="courses-section">
+    <h2>Nossos Cursos</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h5 class="card-title">ADMINISTRAÇÃO</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h5 class="card-title">CIÊNCIAS CONTÁBEIS</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h5 class="card-title">EDUCAÇÃO FÍSICA</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h5 class="card-title">FISIOTERAPIA</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h5 class="card-title">FONOAUDIOLOGIA</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h5 class="card-title">SERVIÇO SOCIAL</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h5 class="card-title">ENFERMAGEM</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h5 class="card-title">PSICOLOGIA</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h5 class="card-title">SISTEMAS DE INFORMAÇÃO</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h5 class="card-title">PEDAGOGIA</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h5 class="card-title">DIREITO</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Lead Form Section -->
+    <section class="lead-form-section" id="lead-form">
+        <h2>Inscreva-se Agora</h2>
+        <form action="{% url 'process_lead' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" placeholder="Seu Nome" required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Seu E-mail" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="phone" placeholder="Seu Telefone" required>
+            </div>
+            <div class="form-group">
+                <select class="form-control" name="course" required>
+                    <option value="">Escolha o Curso</option>
+                    <option value="ADMINISTRAÇÃO">ADMINISTRAÇÃO</option>
+                    <option value="CIÊNCIAS CONTÁBEIS">CIÊNCIAS CONTÁBEIS</option>
+                    <option value="EDUCAÇÃO FÍSICA">EDUCAÇÃO FÍSICA</option>
+                    <option value="FISIOTERAPIA">FISIOTERAPIA</option>
+                    <option value="FONOAUDIOLOGIA">FONOAUDIOLOGIA</option>
+                    <option value="SERVIÇO SOCIAL">SERVIÇO SOCIAL</option>
+                    <option value="ENFERMAGEM">ENFERMAGEM</option>
+                    <option value="PSICOLOGIA">PSICOLOGIA</option>
+                    <option value="SISTEMAS DE INFORMAÇÃO">SISTEMAS DE INFORMAÇÃO</option>
+                    <option value="PEDAGOGIA">PEDAGOGIA</option>
+                    <option value="DIREITO">DIREITO</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-light btn-lg">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Faculdades Fatepi e Faespi | Contato: (86) 9999-9999 | Email: contato@fatepifaespi.com.br</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
