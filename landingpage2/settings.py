@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-eocx9$5(tie6*uio#t9t)o_1-gxrk^+=sj(hqytjmh588#9o86
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'page.grupomagister.online']
 
 
 # Application definition
