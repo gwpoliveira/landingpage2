@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Lead
 
-# Register your models here.
+# Registro do modelo Lead no painel de administração
+admin.site.register(Lead)
