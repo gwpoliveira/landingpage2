@@ -1,12 +1,3 @@
-// Ver Mais - Expandir os cursos escondidos
-document.getElementById('show-more').addEventListener('click', function() {
-    var items = document.querySelectorAll('.course-item.d-none');
-    items.forEach(function(item) {
-        item.classList.remove('d-none');
-    });
-    this.style.display = 'none'; // Esconder o botão "Ver Mais"
-});
-
 // Filtros por categoria
 document.querySelectorAll('.filter-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
@@ -14,26 +5,17 @@ document.querySelectorAll('.filter-btn').forEach(function(btn) {
         var items = document.querySelectorAll('.course-item');
 
         items.forEach(function(item) {
-            if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                item.style.display = 'block';
+            var category = item.getAttribute('data-category');
+            if (filter === 'all' || category === filter) {
+                item.style.display = 'block'; // Mostra o item se ele corresponder à categoria
             } else {
-                item.style.display = 'none';
+                item.style.display = 'none';  // Esconde o item se ele não corresponder à categoria
             }
         });
     });
 });
 
-// Campo de busca para filtrar cursos por nome
-document.getElementById('search').addEventListener('input', function() {
-    var searchQuery = this.value.toLowerCase();
-    var items = document.querySelectorAll('.course-item');
-
-    items.forEach(function(item) {
-        var title = item.querySelector('.card-title').textContent.toLowerCase();
-        if (title.includes(searchQuery)) {
-            item.style.display = 'block';
-        } else {
-            item.style.display = 'none';
-        }
-    });
+// Simula o clique no botão da categoria 'Humanas' quando a página carregar
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.filter-btn[data-filter="humanas"]').click();
 });
