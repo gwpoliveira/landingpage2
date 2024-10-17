@@ -42,6 +42,7 @@
                     <th>Email</th>
                     <th>Telefone</th>
                     <th>Curso de Interesse</th>
+                    <th>Consultor</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,13 +52,14 @@
                     <td>{{ lead.email }}</td>
                     <td>{{ lead.phone }}</td>
                     <td>{{ lead.course }}</td>
+                    <td>{{ lead.consultores }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
 
         <!-- Botão para exportar dados -->
-        <a href="{% url 'export_leads_csv' %}" class="btn btn-success">Exportar Inscritos em CSV</a>
+        <a href="{% url 'export_leads_xlsx' %}" class="btn btn-success">Exportar Inscritos em XLSX</a>
 
     </div>
 

@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<!-- Navbar com Menu Hambúrguer -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Navbar com Menu Hambúrguer -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/">Faculdade Fatepi / Faespi</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -40,7 +40,7 @@
 </nav>
 
    <!-- Hero Section -->
-<header class="hero-section">
+    <header class="hero-section">
     <a href="#lead-form" class="banner-link"> <!-- Torna todo o banner clicável -->
         <div class="banner">
             <div class="banner-content">
@@ -150,71 +150,89 @@
 
     <!-- Formulário de Inscrição -->
     <section id="lead-form" class="lead-form-section">
-    <div class="container">
-        <h2 class="text-center">Inscreva-se Agora</h2>
-        <form action="{% url 'process_lead' %}" method="post" class="lead-form">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="name">Nome Completo</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fas fa-user"></i>
-                        </span>
+        <div class="container">
+            <h2 class="text-center">Inscreva-se Agora</h2>
+            <form action="{% url 'process_lead' %}" method="post" class="lead-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Nome Completo</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Seu Nome" required>
                     </div>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Seu Nome" required>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fas fa-envelope"></i>
-                        </span>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Seu E-mail" required>
                     </div>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Seu E-mail" required>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="phone">Telefone</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fas fa-phone"></i>
-                        </span>
+                <div class="form-group">
+                    <label for="phone">Telefone</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-phone"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Seu Telefone" required>
                     </div>
-                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Seu Telefone" required>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="course">Curso de Interesse</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fas fa-book"></i>
-                        </span>
+                <div class="form-group">
+                    <label for="course">Curso de Interesse</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-book"></i>
+                            </span>
+                        </div>
+                        <select class="form-control" id="course" name="course" required>
+                            <option value="">Escolha o Curso</option>
+                            <option value="ADMINISTRAÇÃO">ADMINISTRAÇÃO</option>
+                            <option value="CIÊNCIAS CONTÁBEIS">CIÊNCIAS CONTÁBEIS</option>
+                            <option value="EDUCAÇÃO FÍSICA">EDUCAÇÃO FÍSICA</option>
+                            <option value="FISIOTERAPIA">FISIOTERAPIA</option>
+                            <option value="FONOAUDIOLOGIA">FONOAUDIOLOGIA</option>
+                            <option value="SERVIÇO SOCIAL">SERVIÇO SOCIAL</option>
+                            <option value="ENFERMAGEM">ENFERMAGEM</option>
+                            <option value="PSICOLOGIA">PSICOLOGIA</option>
+                            <option value="SISTEMAS DE INFORMAÇÃO">SISTEMAS DE INFORMAÇÃO</option>
+                            <option value="PEDAGOGIA">PEDAGOGIA</option>
+                            <option value="DIREITO">DIREITO</option>
+                        </select>
                     </div>
-                    <select class="form-control" id="course" name="course" required>
-                        <option value="">Escolha o Curso</option>
-                        <option value="ADMINISTRAÇÃO">ADMINISTRAÇÃO</option>
-                        <option value="CIÊNCIAS CONTÁBEIS">CIÊNCIAS CONTÁBEIS</option>
-                        <option value="EDUCAÇÃO FÍSICA">EDUCAÇÃO FÍSICA</option>
-                        <option value="FISIOTERAPIA">FISIOTERAPIA</option>
-                        <option value="FONOAUDIOLOGIA">FONOAUDIOLOGIA</option>
-                        <option value="SERVIÇO SOCIAL">SERVIÇO SOCIAL</option>
-                        <option value="ENFERMAGEM">ENFERMAGEM</option>
-                        <option value="PSICOLOGIA">PSICOLOGIA</option>
-                        <option value="SISTEMAS DE INFORMAÇÃO">SISTEMAS DE INFORMAÇÃO</option>
-                        <option value="PEDAGOGIA">PEDAGOGIA</option>
-                        <option value="DIREITO">DIREITO</option>
-                    </select>
                 </div>
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg btn-block mb-5">Enviar</button>
-        </form>
-    </div>
-</section>
+                <div class="form-group">
+                    <label for="consultores">Consultor Responsável</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-user-tie"></i>
+                            </span>
+                        </div>
+                        <select class="form-control" id="consultores" name="consultores" required>
+                            <option value="">Escolha o Consultor</option>
+                            <option value="-------------------">-------------------</option>
+                            <option value="Marisa Rodrigues">Marisa Rodrigues</option>
+                            <option value="Jacob Ambrósio">Jacob Ambrósio</option>
+                            <option value="Vitor Leal">Vitor Leal</option>
+                            <option value="Larissa Lari">Larissa Lari</option>
+                            <option value="Thiago Gomes">Thiago Gomes</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block mb-5 mt-4">Enviar</button>
+            </form>
+    </section>
 
     <!-- Footer -->
     <footer>

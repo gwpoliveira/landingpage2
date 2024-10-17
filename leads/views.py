@@ -1,10 +1,11 @@
-import csv
+import openpyxl
 from django.contrib.auth.decorators import user_passes_test
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from .models import Lead
+
 
 # Verificar se o usuário é superusuário
 def is_superuser(user):
@@ -14,17 +15,18 @@ def home(request):
     return render(request, 'home.html')
 
 def process_lead(request):
-    if request.method == "POST":
-        name = request.POST['name']
-        email = request.POST['email']
-        phone = request.POST['phone']
-        course = request.POST['course']
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        course = request.POST.get('course')
+        consultores = request.POST.get('consultores')
 
-        lead = Lead(name=name, email=email, phone=phone, course=course)
+        lead = Lead(name=name, email=email, phone=phone, course=course, consultores=consultores)
         lead.save()
 
         return redirect('thank_you')
-    return render(request, 'lead_form.html')
+    return render(request, 'home.html')
 
 def thank_you(request):
     return render(request, 'thank_you.html')
@@ -34,22 +36,30 @@ def admin_leads_view(request):
     leads = Lead.objects.all()
     return render(request, 'admin_leads.html', {'leads': leads})
 
-# Exportar os inscritos em CSV
-@user_passes_test(is_superuser)
-def export_leads_csv(request):
+
+@user_passes_test(lambda u: u.is_superuser)
+def export_leads_xlsx(request):
+    # Criar um workbook e a worksheet
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.title = "Inscritos"
+
+    # Definir os cabeçalhos da planilha
+    ws.append(['Nome', 'Email', 'Telefone', 'Curso de Interesse', 'Consultor'])
+
+    # Obter os dados dos leads
     leads = Lead.objects.all()
 
-    if not leads.exists():
-        return HttpResponse("Nenhum lead registrado para exportar.", content_type="text/plain")
-
-    response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename="inscritos.csv"'
-
-    writer = csv.writer(response)
-    writer.writerow(['Nome', 'Email', 'Telefone', 'Curso de Interesse'])
-
+    # Adicionar os dados de cada lead na planilha
     for lead in leads:
-        writer.writerow([lead.name, lead.email, lead.phone, lead.course])
+        ws.append([lead.name, lead.email, lead.phone, lead.course, lead.consultores])
+
+    # Definir a resposta HTTP com o arquivo XLSX
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename=inscritos.xlsx'
+
+    # Salvar o workbook na resposta
+    wb.save(response)
 
     return response
 
@@ -70,3 +80,4 @@ def custom_logout(request):
     logout(request)
     messages.success(request, 'Você saiu da sua conta.')
     return redirect('home')
+
