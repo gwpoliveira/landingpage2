@@ -59,9 +59,9 @@
         <h2>Nossos Cursos</h2>
         <div>
             <button class="btn btn-outline-primary filter-btn" data-filter="humanas">Humanas e Sociais</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="gestao">Gestão e Negócio</button>
             <button class="btn btn-outline-primary filter-btn" data-filter="exatas">Tecnologia</button>
             <button class="btn btn-outline-primary filter-btn" data-filter="saude">Saúde</button>
-            <button class="btn btn-outline-primary filter-btn" data-filter="gestao">Gestão e Negócio</button>
             <button class="btn btn-outline-primary filter-btn" data-filter="all">Todos</button>
         </div>
 
@@ -69,82 +69,87 @@
 
     <!-- Courses Section -->
     <section class="courses-section">
-        <div class="container">
-            <div class="row" id="course-list">
-                <div class="col-md-4 mb-4 course-item" data-category="humanas">
-                    <div class="card custom-card mb-4">
-                        <div class="card-body">
-                            <img src="{% static 'img/direito.webp' %}" alt="Direito">
-                            <h5 class="card-title">Direito</h5>
-                        </div>
-                    </div>
-                    <div class="card custom-card mb-4">
-                        <div class="card-body">
-                            <img src="{% static 'img/pedagogia.webp' %}" alt="Pedagogia">
-                            <h5 class="card-title">Pedagogia</h5>
-                        </div>
-                    </div>
-                    <div class="card custom-card mb-4">
-                        <div class="card-body">
-                            <img src="{% static 'img/social.webp' %}" alt="Serviço Social">
-                            <h5 class="card-title">Serviço Social</h5>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 mb-4 course-item" data-category="exatas">
-                    <div class="card custom-card">
-                        <div class="card-body">
-                            <img src="{% static 'img/sistemas.webp' %}" alt="Sistemas de Informação">
-                            <h5 class="card-title">Sistemas de Informação</h5>
-                        </div>
+    <div class="container">
+        <div class="row justify-content-center" id="course-list">
+            <!-- Primeira Coluna: Humanas -->
+            <div class="col-md-4 mb-4 course-item" data-category="humanas">
+                <div class="card custom-card mb-4 text-center">
+                    <div class="card-body">
+                        <img src="{% static 'img/direito.webp' %}" alt="Direito">
+                        <h5 class="card-title">Direito</h5>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4 course-item" data-category="saude">
-                    <div class="card custom-card mb-4">
-                        <div class="card-body ">
-                            <img src="{% static 'img/enfermagem.webp' %}" alt="Enfermagem">
-                            <h5 class="card-title">Enfermagem</h5>
-                        </div>
+                <div class="card custom-card mb-4 text-center">
+                    <div class="card-body">
+                        <img src="{% static 'img/pedagogia.webp' %}" alt="Pedagogia">
+                        <h5 class="card-title">Pedagogia</h5>
                     </div>
-                    <div class="card custom-card mb-4">
-                        <div class="card-body ">
-                            <img src="{% static 'img/fisica.webp' %}" alt="Educação Física">
-                            <h5 class="card-title">Educação Física</h5>
-                        </div>
-                    </div>
-                    <div class="card custom-card mb-4">
-                        <div class="card-body ">
-                            <img src="{% static 'img/fisioterapia.webp' %}" alt="Fisioterapia">
-                            <h5 class="card-title">Fisioterapia</h5>
-                        </div>
-                    </div>
-                    <div class="card custom-card mb-4">
-                        <div class="card-body">
-                            <img src="{% static 'img/psicologia.webp' %}" alt="Psicologia">
-                            <h5 class="card-title">Psicologia</h5>
-                        </div>
-                    </div>
-
                 </div>
-                <div class="col-md-4 mb-4 course-item" data-category="gestao">
-                    <div class="card custom-card mb-4">
-                        <div class="card-body">
-                            <img src="{% static 'img/administracao.webp' %}" alt="Administração">
-                            <h5 class="card-title">Administração</h5>
-                        </div>
+                <div class="card custom-card mb-4 text-center">
+                    <div class="card-body">
+                        <img src="{% static 'img/social.webp' %}" alt="Serviço Social">
+                        <h5 class="card-title">Serviço Social</h5>
                     </div>
-                    <div class="card custom-card">
-                        <div class="card-body">
-                            <img src="{% static 'img/contabeis.webp' %}" alt="Contabeis">
-                            <h5 class="card-title">Contabéis</h5>
-                        </div>
-                    </div>
+                </div>
+            </div>
 
+            <!-- Segunda Coluna: Exatas -->
+            <div class="col-md-4 mb-4 course-item" data-category="exatas">
+                <div class="card custom-card text-center">
+                    <div class="card-body">
+                        <img src="{% static 'img/sistemas.webp' %}" alt="Sistemas de Informação">
+                        <h5 class="card-title">Sistemas de Informação</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terceira Coluna: Saúde -->
+            <div class="col-md-4 mb-4 course-item" data-category="saude">
+                <div class="card custom-card mb-4 text-center">
+                    <div class="card-body">
+                        <img src="{% static 'img/enfermagem.webp' %}" alt="Enfermagem">
+                        <h5 class="card-title">Enfermagem</h5>
+                    </div>
+                </div>
+                <div class="card custom-card mb-4 text-center">
+                    <div class="card-body">
+                        <img src="{% static 'img/fisica.webp' %}" alt="Educação Física">
+                        <h5 class="card-title">Educação Física</h5>
+                    </div>
+                </div>
+                <div class="card custom-card mb-4 text-center">
+                    <div class="card-body">
+                        <img src="{% static 'img/fisioterapia.webp' %}" alt="Fisioterapia">
+                        <h5 class="card-title">Fisioterapia</h5>
+                    </div>
+                </div>
+                <div class="card custom-card mb-4 text-center">
+                    <div class="card-body">
+                        <img src="{% static 'img/psicologia.webp' %}" alt="Psicologia">
+                        <h5 class="card-title">Psicologia</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quarta Coluna: Gestão -->
+            <div class="col-md-4 mb-4 course-item" data-category="gestao">
+                <div class="card custom-card mb-4 text-center">
+                    <div class="card-body">
+                        <img src="{% static 'img/administracao.webp' %}" alt="Administração">
+                        <h5 class="card-title">Administração</h5>
+                    </div>
+                </div>
+                <div class="card custom-card text-center">
+                    <div class="card-body">
+                        <img src="{% static 'img/contabeis.webp' %}" alt="Contabeis">
+                        <h5 class="card-title">Contábeis</h5>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Formulário de Inscrição -->
     <section id="lead-form" class="lead-form-section">
