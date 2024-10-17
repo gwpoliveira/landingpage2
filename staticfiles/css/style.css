@@ -218,3 +218,23 @@ footer {
     background-color: #0229b7;
     color: #ffffff;
 }
+
+/* ------  WhatsApp ---------*/
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px; /* Distância do ícone em relação à parte inferior da página */
+    right: 20px;  /* Distância do ícone em relação à direita da página */
+    background-color: #25D366; /* Cor de fundo do ícone do WhatsApp */
+    color: white; /* Cor do ícone */
+    border-radius: 50px; /* Torna o botão arredondado */
+    padding: 15px; /* Tamanho do botão */
+    font-size: 30px; /* Tamanho do ícone */
+    z-index: 1000; /* Certifique-se de que o ícone fique acima de outros elementos da página */
+    text-align: center;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E; /* Cor ao passar o mouse */
+    color: white;
+}
+
