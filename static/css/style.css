@@ -77,8 +77,9 @@ body {
 }
 
 .custom-card img {
-    width: 50px;
-    margin-bottom: 8px;
+    width: 200px; /* Aumente ou diminua o valor conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-bottom: 8px; /* Ajusta a margem inferior */
 }
 
 .custom-card .card-title {
