@@ -10,7 +10,7 @@ class Lead(models.Model):
         ('Marisa Rodrigues', 'Marisa Rodrigues'),
         ('Jacob Ambrósio', 'Jacob Ambrósio'),
         ('Vito Leal', 'Vito Leal'),
-        ('Larissa Lari', 'Larissa Lari'),
+        ('Larissa Soares', 'Larissa Soares'),
         ('Thiago Gomes', 'Thiago Gomes'),
     ]
 
