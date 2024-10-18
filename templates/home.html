@@ -262,14 +262,9 @@
             const courses = document.querySelectorAll('.course-item');
             courses.forEach(course => course.style.display = 'none');
 
-            // Exibir apenas os cursos solicitados ao carregar a página
-            const coursesToShow = ['#direito-course', '#enfermagem-course', '#psicologia-course', '#fonoaudiologia-course'];
-            coursesToShow.forEach(courseId => {
-                const course = document.querySelector(courseId);
-                if (course) {
-                    course.style.display = 'block';
-                }
-            });
+            // Exibir apenas os cursos de Saúde ao carregar a página
+            const coursesToShow = document.querySelectorAll('[data-category="saude"]');
+            coursesToShow.forEach(course => course.style.display = 'block');
 
             // Filtros
             const filterButtons = document.querySelectorAll('.filter-btn');
